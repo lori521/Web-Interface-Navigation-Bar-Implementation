@@ -1,5 +1,3 @@
-TĂNASE Lorena - 311 CB 
-Punctaj local: 95/115   
 Codul meu este structurat in mai multe fisiere pentru a fi mai clar scopul functiilor din fiecare fisier sursa. 
 In nume_functii.h am declarat structurile si functiile folosite.
 In main.c am facut extragerea treptata a datelor din fisier. Constructia arborelui initial am facut-o independent de numarul cerintei extrase din linia de comanda deoarece prima parte de input se repeta la toate testele. Apoi in functie de numarul cerintei am extras restul informatiilor in vectori pentru a le folosi in rezolvare si am apelat functia corespunzatoare. La final am eliberat memoria ocupata cu structurile si am inchis fisierele din care citeam input-ul si scriam rezultatul.
