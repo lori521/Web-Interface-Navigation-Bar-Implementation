@@ -1,2 +1,20 @@
-# Web-Interface-Navigation-Bar-Implementation
-Built a browser navigation system in C with tab handling, page management, and forward/backward navigation using custom stack and list structures.
+TĂNASE Lorena - 311 CB 
+Punctaj local: 95/115   
+Codul meu este structurat in mai multe fisiere pentru a fi mai clar scopul functiilor din fiecare fisier sursa. 
+In nume_functii.h am declarat structurile si functiile folosite.
+In main.c am facut extragerea treptata a datelor din fisier. Constructia arborelui initial am facut-o independent de numarul cerintei extrase din linia de comanda deoarece prima parte de input se repeta la toate testele. Apoi in functie de numarul cerintei am extras restul informatiilor in vectori pentru a le folosi in rezolvare si am apelat functia corespunzatoare. La final am eliberat memoria ocupata cu structurile si am inchis fisierele din care citeam input-ul si scriam rezultatul.
+In alocar_distr.c am preluat din laborator majoritatea functiilor pentru heap, coada si arbori. Singurele modificari pe care le-am facut au fost la introducerea informatiei care de data asta a fost formata atat dintr-un intreg(frecventa) si un sir de caractere(numele satelitului).
+In fct_suplimentare.c am implementat 4 functii care ma ajuta in implementarea cerintelor sau pentru extragerea informatiilor din input. Functia nr_task imi returneaza numarul task-ului in functie de argumentul din linia de comanda, trimming_if_fun returneaza o copie a string-ului primit in input fara spatii si eliberaza memoria stringului initial, constr_drum este o functie care pune intr-un vector drumul gasit de la radacina pana la un satelit cu un anumit nume si afisare_galaxie este implementarea pseudocodului de la curs pentru afisare pe nivel al unui arbore binar.
+In tasks.c am implementat pe rand fiecare cerinta. 
+Functia task1 returneaza un arbore binar format atat cu satelitii din input, dar si cu satelitii de legatura. Initial formez un min-heap doar cu satelitii preluati din input. Atata timp cat numarul de elemente din min-heap este mai mare ca 1 extrag cate doi sateliti pentru a forma informatiile satelitului de legatura. Il aloc dinamic, il initializez cu informatiile respective si formez legaturile intre el si cei doi sateliti extrasi anterior. Atunci cand in min-heap ramane un singur satelit il extrag separat si eliberez memoria heap-ului. Acest reprezinta adresa de inceput a arborelui final.
+Task2 parcurge toata lungimea string-ului primit. Daca caracterul primit este 0 atunci el merge in subarborele stang, altfel coboara in subarborele drept, daca exista. In momentul in care satelitul nu are nici fiu stanga si nici fiu dreapta se scrie in fisier numele satelitului respectiv si parcurgerea se ia de la inceput pana la terminarea sirului. Dupa se muta la un alt sir de caractere pana cand este parcurs tot vectorul extras din input.
+Task3 foloseste un vector pentru a retine drumul pana la gasirea satelitului. Pentru a evita confuziile vectorul este initializat cu valori de 7, pe care nu le afisaza. Pentru fiecare satelit din input se acceseaza functia constr_drum care parcurge recursiv arborele si adauga valori de 1 sau 0 in vector in functie de subarborele in care merge. Iesirea din recursivitate se face in momentul in care se gaseste satelitul cu numele cautat. Dupa construirea acestui drum vectorul else afisat invers in fisier pentru a respecta ordinea satelit-radacina.
+Task4 implementeaza recursiv un algoritm de cautare al ultimului satelit care contine toate string-urile din input. La fiecare apel se parcurge vectorul de input si se asigura ca toate numele de sateliti din input se afla in numele satelitului curent. Daca acea conditie nu este indeplinita variabila care retine daca toate numele de sateliti din input se afla in numele satelitului curent primeste valoarea 0. Dupa parcurgerea arborelui se returneaza satelitul gasit pe nivelul cel mai mare in arbore.
+In implementarea codului meu am folosit AI-ul(Deepseek) pentru a rezova cateva leak-uri de memorie si mai multe site-uri de unde am inteles diferiti algoritmi si cum pot prelua argumente din linia de comanda.
+
+Link-uri:
+link 1 - https://unstop.com/blog/command-line-arguments-in-c#:~:text=Command%2Dline%20arguments%20in%20C%20are%20provided%20through%20the%20main,gives%20the%20count%20of%20arguments.
+link 2 - https://www.geeksforgeeks.org/command-line-arguments-in-c-cpp/
+link 3 - https://www.geeksforgeeks.org/c-program-for-breadth-first-search-or-bfs-for-a-graph/
+link 4 - https://www.geeksforgeeks.org/huffman-coding-greedy-algo-3/
+ 
